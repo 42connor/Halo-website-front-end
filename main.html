@@ -237,7 +237,7 @@
         }
 
         footer {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(255, 255, 255, 0.1);
             padding: 20px 0;
             text-align: center;
         }
@@ -439,64 +439,11 @@
                 margin-bottom: 30px;
             }
 
-            #interactive-demo {
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 80px 0;
-}
-
-.demo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.demo-card {
-    height: 300px;
-    perspective: 1000px;
-    cursor: pointer;
-}
-
-.demo-front, .demo-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    transition: transform 0.6s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
-    box-shadow: 0 8px 32px 0 rgba(0, 255, 255, 0.1);
-}
-
-.demo-front {
-    background-color: rgba(0, 255, 255, 0.1);
-}
-
-.demo-back {
-    background-color: rgba(255, 0, 255, 0.1);
-    transform: rotateY(180deg);
-}
-
-.demo-card:hover .demo-front {
-    transform: rotateY(180deg);
-}
-
-.demo-card:hover .demo-back {
-    transform: rotateY(360deg);
-}
-
-.demo-back video {
-    width: 100%;
-    max-width: 200px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
+            footer {
+                padding: 10px 0;
+                object-fit: inline;
+                background-color: rgba(255, 255, 255, 0.2);
+            }
 
 @media (max-width: 768px) {
     .demo-grid {
@@ -572,71 +519,6 @@
             </ul>
         </div>
     </section>
-
-    <section id="interactive-demo" class="section">
-        <div class="container">
-            <h2>Experience Halo</h2>
-            <p>Explore the potential of Halo through our interactive demos. Click on each card to see Halo in action!</p>
-            <div class="demo-grid">
-                <div class="demo-card" onclick="toggleDemo(this)">
-                    <div class="demo-front">
-                        <img src="warm.png" alt="">
-                        <h3>Smart Home Control</h3>
-                        <p>Control your smart home devices with just a thought.</p>
-                    </div>
-                    <div class="demo-back">
-                        <video loop muted>
-                            <source src="/api/placeholder/400/300" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p>Halo allows you to adjust lights, temperature, and more, hands-free.</p>
-                    </div>
-                </div>
-                <div class="demo-card" onclick="toggleDemo(this)">
-                    <div class="demo-front">
-                        <img src="" alt="">
-                        <h3>vibe</h3>
-                        <p>The team at halo is working on the future of calling. Every time you call using your halo, you will have the option to turn the call into a vibe. when this feature is enabled, your halo will stream how youre feeling in real time during the call and display it as soothing and communicative colors.</p>
-                    </div>
-                    <div class="demo-back">
-                        <video loop muted>
-                            <source src="/api/placeholder/400/300" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p>Open applications, type, and navigate your computer using Halo's neural interface.</p>
-                    </div>
-                </div>
-                <div class="demo-card" onclick="toggleDemo(this)">
-                    <div class="demo-front">
-                        <h3>Gaming Revolution</h3>
-                        <p>Experience next-level gaming with mind control.</p>
-                    </div>
-                    <div class="demo-back">
-                        <video loop muted>
-                            <source src="" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p>Control in-game actions with your thoughts for a truly immersive gaming experience.</p>
-                    </div>
-                </div>
-                <div class="demo-card" onclick="toggleDemo(this)">
-                    <div class="demo-front">
-                        <img src="" alt="">
-                        <h3>Open application Tools</h3>
-                        <p>Empowering individuals with limited mobility.</p>
-                    </div>
-                    <div class="demo-back">
-                        <video loop muted>
-                            <source src="/api/placeholder/400/300" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p>Halo provides new avenues for communication and control for those with physical limitations.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="contact" class="section">
         <div class="container">
             <h2>Join the Waiting List</h2>
@@ -676,9 +558,12 @@
                 <div class="concept-art-item">
                     <img src="warm.png" alt="">
             </div>
-            <p>Halo Coming soon... Stay tuned for our upcoming video!</p>
+            <div class="concept-art-item"></div>
+            <img src="" alt="">
+            <p>Halo Coming soon</p>
         </div>
     </section>
+    
     
     <style>
     .concept-art {
@@ -726,8 +611,10 @@
 
     <footer>
         <div class="container">
+            <p><a href="investors.html">investors</a></p>
+            <p><a href="apply.html">apply</a></p>
+            <p><a href="develop.html">develop</a></p>
             <p>&copy; 2024 Halo. All rights reserved.</p>
-        </div>
     </footer>
 
     <script>

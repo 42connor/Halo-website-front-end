@@ -1,2 +1,2 @@
-# Halo-website-front-end
+# 42connor.github.io
 Halo

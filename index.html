@@ -269,14 +269,27 @@ footer {
 }
 
 /* Roadmap Styles */
+/* Roadmap Styles */
 .roadmap {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
+    padding: 20px 0;
+}
+
+.roadmap::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #FF9F55;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
 }
 
 .roadmap-item {
-    padding: 20px 0;
+    padding: 20px 40px;
     position: relative;
     width: 50%;
 }
@@ -315,6 +328,7 @@ footer {
     background-color: white;
     position: relative;
     border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .roadmap-content h3 {
@@ -325,18 +339,18 @@ footer {
     margin-bottom: 0;
 }
 
-/* Make sure the timeline is displayed on the left side of the items */
-.roadmap::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    background-color: #FF9F55;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -1px;
+@media screen and (max-width: 600px) {
+    .roadmap-item.left, .roadmap-item.right {
+        left: 0;
+        width: 100%;
+        padding: 10px 20px;
+        text-align: left;
+    }
+    
+    .roadmap-item::after {
+        left: calc(50% - 13px);
+    }
 }
-
 
 /* Parallax */
 .parallax {

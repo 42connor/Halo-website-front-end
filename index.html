@@ -542,7 +542,7 @@ footer {
         
     <section id="contact" class="section">
         <div class="container">
-            <h2>Join the Waiting List</h2>
+            <h2>Expressions of interest</h2>
             <div class="form-container">
                 <form id="waitlist-form">
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -616,53 +616,6 @@ footer {
             } else {
                 navbar.classList.remove('scrolled');
             }
-        });
-
-        // Three.js Floating Halo
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.getElementById('floating-halo').appendChild(renderer.domElement);
-
-        const geometry = new THREE.TorusGeometry(1, 0.3, 16, 100);
-        const material = new THREE.MeshPhongMaterial({ color: 0x00ffff });
-        const halo = new THREE.Mesh(geometry, material);
-        scene.add(halo);
-
-        const light = new THREE.PointLight(0xffffff, 1, 100);
-        light.position.set(0, 0, 10);
-        scene.add(light);
-
-        camera.position.z = 6;
-
-        function animate() {
-            requestAnimationFrame(animate);
-            halo.rotation.y += 0.01;
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        // Scroll-based rotation
-        let lastScrollTop = 0;
-        window.addEventListener('scroll', () => {
-            const st = window.pageYOffset || document.documentElement.scrollTop;
-            if (st > lastScrollTop) {
-                // Scrolling down
-                halo.rotation.x += 0.05;
-            } else {
-                // Scrolling up
-                halo.rotation.x -= -0.05;
-                halo.spin = 0.05;
-            }
-            lastScrollTop = st <= 0 ? 0 : st;
-        });
-
-        // Resize handler
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
         });
 
         // Form submission

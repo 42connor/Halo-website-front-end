@@ -268,85 +268,75 @@ footer {
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
-/* Roadmap */
+/* Roadmap Styles */
 .roadmap {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.roadmap::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: var(--primary-color);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-}
-
 .roadmap-item {
-    padding: 10px 40px;
+    padding: 20px 0;
     position: relative;
-    background-color: inherit;
     width: 50%;
 }
 
+.roadmap-item.left {
+    left: 0;
+}
+
+.roadmap-item.right {
+    left: 50%;
+}
+
 .roadmap-item::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 25px;
     height: 25px;
-    right: -17px;
-    background-color: var(--secondary-color);
-    border: 4px solid var(--primary-color);
+    right: -13px;
+    background-color: white;
+    border: 4px solid #FF9F55;
     top: 15px;
     border-radius: 50%;
     z-index: 1;
 }
 
-.left {
-    left: 0;
+.roadmap-item.left::after {
+    left: -13px;
 }
 
-.right {
-    left: 50%;
-}
-
-.left::before,
-.right::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    border: medium solid var(--primary-color);
-}
-
-.left::before {
-    right: 30px;
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent var(--primary-color);
-}
-
-.right::before {
-    left: 30px;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent var(--primary-color) transparent transparent;
-}
-
-.right::after {
-    left: -16px;
+.roadmap-item.right::after {
+    right: -13px;
 }
 
 .roadmap-content {
-    padding: 20px 30px;
-    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    background-color: white;
     position: relative;
     border-radius: 6px;
 }
+
+.roadmap-content h3 {
+    margin-top: 0;
+}
+
+.roadmap-content p {
+    margin-bottom: 0;
+}
+
+/* Make sure the timeline is displayed on the left side of the items */
+.roadmap::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #FF9F55;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
 
 /* Parallax */
 .parallax {
@@ -488,17 +478,37 @@ footer {
         </div>
     </section>
 
-    <section id="roadmap" class="section">
-        <div class="container">
-            <h2>Halo Roadmap</h2>
-            <p>We are currently in the early stages of development and seeking prototyping grants and seed investments. Here's what you can expect:</p>
-            <ul>
-                <li>2024: Prototype development and initial testing</li>
-                <li>2025: Production begins and first units shipped to early adopters</li>
-                <li>2026: Expanded features and integration with more devices and platforms</li>
-            </ul>
+   <section class="section">
+    <div class="container">
+        <h2>Roadmap</h2>
+        <div class="roadmap">
+            <div class="roadmap-item left">
+                <div class="roadmap-content">
+                    <h3>Phase 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <div class="roadmap-item right">
+                <div class="roadmap-content">
+                    <h3>Phase 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <div class="roadmap-item left">
+                <div class="roadmap-content">
+                    <h3>Phase 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <div class="roadmap-item right">
+                <div class="roadmap-content">
+                    <h3>Phase 4</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
          <section class="section concept-art">
         <div class="container">
             <h2>Check out our concept art</h2>
@@ -671,16 +681,6 @@ footer {
             event.preventDefault();
             window.location.href = 'https://buy.stripe.com/test_3cs28ZgvS9Ol9hK6oq';
         });
-
-        function toggleDemo(card) {
-    card.classList.toggle('flipped');
-    const video = card.querySelector('video');
-    if (card.classList.contains('flipped')) {
-        video.play();
-    } else {
-        video.pause();
-        video.currentTime = 0;
-    }
 }
     </script>
 </body>

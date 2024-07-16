@@ -401,33 +401,24 @@ footer {
         padding-right: 0;
         margin-bottom: 30px;
     }
+    
+            .roadmap-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 25px;
+            }
 
-    .roadmap::after {
-        left: 31px;
-    }
+            .roadmap-item::before, .roadmap-item::after {
+                left: 15px;
+            }
 
-    .roadmap-item {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-    }
+            .right::before, .left::before {
+                display: none;
+            }
 
-    .roadmap-item::before {
-        left: 60px;
-        border: medium solid var(--primary-color);
-        border-width: 10px 10px 10px 0;
-        border-color: transparent var(--primary-color) transparent transparent;
-    }
-
-    .left::after,
-    .right::after {
-        left: 15px;
-    }
-
-    .right {
-        left: 0%;
-    }
-
+            .roadmap::after {
+                left: 20px;
+            }
     .demo-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
